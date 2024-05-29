@@ -5,8 +5,7 @@ from models import Artist, Song
 from config import client_id, client_secret
 from constants import (
     TOKEN_URL, SEARCH_URL, TOP_TRACKS_URL_TEMPLATE,
-    TOKEN_HEADERS, TOKEN_DATA, MARKET,
-    ERROR_FETCHING_TOKEN, ERROR_FETCHING_ARTIST, ERROR_FETCHING_TOP_TRACKS
+    TOKEN_HEADERS, TOKEN_DATA, MARKET
 )
 
 class SpotifyClient:
@@ -24,7 +23,7 @@ class SpotifyClient:
 
         response = requests.post(TOKEN_URL, headers=headers, data=TOKEN_DATA)
         if response.status_code != 200:
-            raise Exception(ERROR_FETCHING_TOKEN)
+            raise Exception('Error fetching access token')
         response_data = response.json()
         return response_data['access_token']
 
@@ -40,7 +39,7 @@ class SpotifyClient:
 
         response = requests.get(SEARCH_URL, headers=headers, params=params)
         if response.status_code != 200:
-            raise Exception(ERROR_FETCHING_ARTIST)
+            raise Exception('Error fetching artist data')
         response_data = response.json()
         item = response_data['artists']['items'][0]
 
@@ -64,7 +63,7 @@ class SpotifyClient:
 
         response = requests.get(url, headers=headers, params=params)
         if response.status_code != 200:
-            raise Exception(ERROR_FETCHING_TOP_TRACKS)
+            raise Exception('Error fetching top tracks')
         response_data = response.json()
 
         return [

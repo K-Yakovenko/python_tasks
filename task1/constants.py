@@ -9,7 +9,3 @@ TOKEN_DATA = {
     'grant_type': 'client_credentials'
 }
 MARKET = 'US'
-
-ERROR_FETCHING_TOKEN = 'Error fetching access token'
-ERROR_FETCHING_ARTIST = 'Error fetching artist data'
-ERROR_FETCHING_TOP_TRACKS = 'Error fetching top tracks'
