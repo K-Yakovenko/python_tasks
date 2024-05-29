@@ -1,0 +1,10 @@
+{
+  "artists_genres": {
+    "Drake": ["Rap"],
+    "The Beatles": ["British Invasion"]
+  },
+  "artists_popular_songs": {
+    "Drake": ["One Dance"],
+    "The Beatles": ["Here Comes The Sun - Remastered 2009"]
+  }
+}
